@@ -1,0 +1,36 @@
+{
+  "name": "salesorder",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xssec": "^3",
+    "app": "^0.1.0",
+    "approuter": "^0.0.1-security",
+    "express": "^4",
+    "passport": "^0.7.0",
+    "router": "^1.3.8",
+    "@sap/cds-hana": "^2"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-salesapp": "cds watch --open salesapp/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa",
+        "db": "hana"
+      }
+    }
+  }
+}
